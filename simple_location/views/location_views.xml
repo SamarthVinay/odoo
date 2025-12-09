@@ -1,0 +1,130 @@
+<!-- simple_location/views/location_views.xml -->
+<odoo>
+  <!-- Country views -->
+  <record id="view_location_country_tree" model="ir.ui.view">
+    <field name="name">location.country.list</field>
+    <field name="model">location.country</field>
+    <field name="arch" type="xml">
+      <list>
+        <field name="name"/>
+      </list>
+    </field>
+  </record>
+  <record id="view_location_country_form" model="ir.ui.view">
+    <field name="name">location.country.form</field>
+    <field name="model">location.country</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <group>
+            <field name="name"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <!-- State views -->
+  <record id="view_location_state_tree" model="ir.ui.view">
+    <field name="name">location.state.list</field>
+    <field name="model">location.state</field>
+    <field name="arch" type="xml">
+      <list>
+        <field name="name"/>
+        <field name="country_id"/>
+      </list>
+    </field>
+  </record>
+  <record id="view_location_state_form" model="ir.ui.view">
+    <field name="name">location.state.form</field>
+    <field name="model">location.state</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <group>
+            <field name="country_id"/>
+            <field name="name"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <!-- City views -->
+  <record id="view_location_city_tree" model="ir.ui.view">
+    <field name="name">location.city.list</field>
+    <field name="model">location.city</field>
+    <field name="arch" type="xml">
+      <list>
+        <field name="name"/>
+        <field name="state_id"/>
+        <field name="country_id"/>
+      </list>
+    </field>
+  </record>
+  <record id="view_location_city_form" model="ir.ui.view">
+    <field name="name">location.city.form</field>
+    <field name="model">location.city</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <group>
+            <field name="state_id"/>
+            <field name="name"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <!-- Selector form (the three dropdowns) -->
+  <record id="view_location_selector_form" model="ir.ui.view">
+    <field name="name">location.selector.form</field>
+    <field name="model">location.selector</field>
+    <field name="arch" type="xml">
+      <form string="Location Selector">
+        <sheet>
+          <group>
+            <field name="name"/>
+            <field name="country_id"/>
+            <field name="state_id" domain="[('country_id', '=', country_id)]"/>
+            <field name="city_id" domain="[('country_id', '=', country_id), ('state_id', '=?', state_id)]"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <!-- Actions and menu -->
+  <record id="action_location_countries" model="ir.actions.act_window">
+    <field name="name">Countries</field>
+    <field name="res_model">location.country</field>
+    <field name="view_mode">list,form</field>
+  </record>
+
+  <record id="action_location_states" model="ir.actions.act_window">
+    <field name="name">States</field>
+    <field name="res_model">location.state</field>
+    <field name="view_mode">list,form</field>
+  </record>
+
+  <record id="action_location_cities" model="ir.actions.act_window">
+    <field name="name">Cities</field>
+    <field name="res_model">location.city</field>
+    <field name="view_mode">list,form</field>
+  </record>
+
+  <record id="action_location_selector" model="ir.actions.act_window">
+    <field name="name">Location Selector</field>
+    <field name="res_model">location.selector</field>
+    <field name="view_mode">form,list</field>
+    <field name="target">current</field>
+  </record>
+
+  <menuitem id="menu_location_root" name="Locations" sequence="10"/>
+  <menuitem id="menu_location_selector" name="Selector" parent="menu_location_root" action="action_location_selector" sequence="1"/>
+  <menuitem id="menu_location_manage" name="Manage" parent="menu_location_root" sequence="10"/>
+  <menuitem id="menu_location_countries" name="Countries" parent="menu_location_manage" action="action_location_countries" sequence="2"/>
+  <menuitem id="menu_location_states" name="States" parent="menu_location_manage" action="action_location_states" sequence="3"/>
+  <menuitem id="menu_location_cities" name="Cities" parent="menu_location_manage" action="action_location_cities" sequence="4"/>
+</odoo>
