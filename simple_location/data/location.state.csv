@@ -1,0 +1,16 @@
+id,name,country_id:id
+state_0_0,Country A State 1,country_0
+state_0_1,Country A State 2,country_0
+state_0_2,Country A State 3,country_0
+state_0_3,Country A State 4,country_0
+state_0_4,Country A State 5,country_0
+state_1_0,Country B State 1,country_1
+state_1_1,Country B State 2,country_1
+state_1_2,Country B State 3,country_1
+state_1_3,Country B State 4,country_1
+state_1_4,Country B State 5,country_1
+state_2_0,Country C State 1,country_2
+state_2_1,Country C State 2,country_2
+state_2_2,Country C State 3,country_2
+state_2_3,Country C State 4,country_2
+state_2_4,Country C State 5,country_2

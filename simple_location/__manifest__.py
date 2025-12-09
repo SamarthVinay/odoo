@@ -9,7 +9,9 @@
     "depends": ["base"],
     "data": [
         "views/location_views.xml",
-        "data/location_data.xml",
+        "data/location.country.csv",
+        "data/location.state.csv",
+        "data/location.city.csv",
         "security/ir.model.access.csv"
     ],
     "installable": True,
