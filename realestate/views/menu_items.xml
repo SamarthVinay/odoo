@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <menuitem
+        id="menu_root_property"
+        name="Property"
+        sequence="10"/>
+
+    <menuitem
+        id="menu_root_propertyads"
+        name="Ads"
+        parent="menu_root_property"
+        sequence="20"/>
+
+    <menuitem
+        id="menuproperty"
+        name="Property"
+        parent="menu_root_propertyads"
+        action="action_property"
+        sequence="30"/>
+
+</odoo>
