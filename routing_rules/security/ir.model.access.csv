@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_routing_account,routing.account,model_routing_account,base.group_user,1,1,1,1
+access_routing_condition,routing.condition,model_routing_condition,base.group_user,1,1,1,1
+access_routing_entity,routing.entity,model_routing_entity,base.group_user,1,1,1,1
+access_routing_jurisdiction,routing.jurisdiction,model_routing_jurisdiction,base.group_user,1,1,1,1
+access_routing_case_type,routing.case_type,model_routing_case_type,base.group_user,1,1,1,1
+access_routing_doc_type,routing.doc_type,model_routing_doc_type,base.group_user,1,1,1,1
+access_routing_rule,routing.rule,model_routing_rule,base.group_user,1,1,1,1
+
+access_routing_test_wizard,routing.test.wizard,model_routing_test_wizard,base.group_user,1,1,1,1
+access_routing_test_result,routing.test.result,model_routing_test_result,base.group_user,1,1,1,1

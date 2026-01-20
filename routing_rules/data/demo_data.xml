@@ -1,0 +1,46 @@
+<odoo>
+    <data noupdate="0">
+        
+        <record id="acc_1" model="routing.account">
+            <field name="account_name">Adams Ltd</field>
+            <field name="account_number">001</field>
+        </record>
+
+        <record id="acc_2" model="routing.account">
+            <field name="account_name">Allen and Sons</field>
+            <field name="account_number">002</field>
+        </record>
+
+        <record id="acc_3" model="routing.account">
+            <field name="account_name">Capillary</field>
+            <field name="account_number">003</field>
+        </record>
+
+        <record id="jur_1" model="routing.jurisdiction">
+            <field name="name">California (US)</field>
+        </record>
+        
+        <record id="jur_2" model="routing.jurisdiction">
+            <field name="name">Texas (US)</field>
+        </record>
+        
+        <record id="ent_1" model="routing.entity">
+            <field name="name">Computershare Entity</field>
+        </record>
+        <record id="ent_2" model="routing.entity">
+            <field name="name">Entity Name 2</field>
+        </record>
+        
+        <record id="case_1" model="routing.case.type">
+            <field name="name">Civil Litigation</field>
+        </record>
+        
+        <record id="doc_1" model="routing.doc.type">
+            <field name="name">Invoice</field>
+        </record>
+        <record id="doc_2" model="routing.doc.type">
+            <field name="name">Summons</field>
+        </record>
+
+    </data>
+</odoo>

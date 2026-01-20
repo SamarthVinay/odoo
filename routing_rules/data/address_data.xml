@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="country_usa_custom" model="res.country">
+            <field name="name">Routing US</field>
+            <field name="code">X1</field>
+        </record>
+        <record id="state_us_ny" model="res.country.state">
+            <field name="name">New York</field>
+            <field name="code">NY</field>
+            <field name="country_id" ref="country_usa_custom"/>
+        </record>
+        <record id="state_us_ca" model="res.country.state">
+            <field name="name">California</field>
+            <field name="code">CA</field>
+            <field name="country_id" ref="country_usa_custom"/>
+        </record>
+        <record id="state_us_tx" model="res.country.state">
+            <field name="name">Texas</field>
+            <field name="code">TX</field>
+            <field name="country_id" ref="country_usa_custom"/>
+        </record>
+        <record id="state_us_fl" model="res.country.state">
+            <field name="name">Florida</field>
+            <field name="code">FL</field>
+            <field name="country_id" ref="country_usa_custom"/>
+        </record>
+
+        <record id="country_in_custom" model="res.country">
+            <field name="name">Routing India</field>
+            <field name="code">X2</field>
+        </record>
+        <record id="state_in_ka" model="res.country.state">
+            <field name="name">Karnataka</field>
+            <field name="code">KA</field>
+            <field name="country_id" ref="country_in_custom"/>
+        </record>
+        <record id="state_in_mh" model="res.country.state">
+            <field name="name">Maharashtra</field>
+            <field name="code">MH</field>
+            <field name="country_id" ref="country_in_custom"/>
+        </record>
+        <record id="state_in_dl" model="res.country.state">
+            <field name="name">Delhi</field>
+            <field name="code">DL</field>
+            <field name="country_id" ref="country_in_custom"/>
+        </record>
+        <record id="state_in_tn" model="res.country.state">
+            <field name="name">Tamil Nadu</field>
+            <field name="code">TN</field>
+            <field name="country_id" ref="country_in_custom"/>
+        </record>
+
+        <record id="country_uk_custom" model="res.country">
+            <field name="name">Routing UK</field>
+            <field name="code">X3</field>
+        </record>
+        <record id="state_uk_eng" model="res.country.state">
+            <field name="name">England</field>
+            <field name="code">ENG</field>
+            <field name="country_id" ref="country_uk_custom"/>
+        </record>
+        <record id="state_uk_sct" model="res.country.state">
+            <field name="name">Scotland</field>
+            <field name="code">SCT</field>
+            <field name="country_id" ref="country_uk_custom"/>
+        </record>
+        <record id="state_uk_wls" model="res.country.state">
+            <field name="name">Wales</field>
+            <field name="code">WLS</field>
+            <field name="country_id" ref="country_uk_custom"/>
+        </record>
+        <record id="state_uk_nir" model="res.country.state">
+            <field name="name">Northern Ireland</field>
+            <field name="code">NIR</field>
+            <field name="country_id" ref="country_uk_custom"/>
+        </record>
+
+        <record id="country_de_custom" model="res.country">
+            <field name="name">Routing Germany</field>
+            <field name="code">X4</field>
+        </record>
+        <record id="state_de_by" model="res.country.state">
+            <field name="name">Bavaria</field>
+            <field name="code">BY</field>
+            <field name="country_id" ref="country_de_custom"/>
+        </record>
+        <record id="state_de_be" model="res.country.state">
+            <field name="name">Berlin</field>
+            <field name="code">BE</field>
+            <field name="country_id" ref="country_de_custom"/>
+        </record>
+        <record id="state_de_hh" model="res.country.state">
+            <field name="name">Hamburg</field>
+            <field name="code">HH</field>
+            <field name="country_id" ref="country_de_custom"/>
+        </record>
+        <record id="state_de_he" model="res.country.state">
+            <field name="name">Hesse</field>
+            <field name="code">HE</field>
+            <field name="country_id" ref="country_de_custom"/>
+        </record>
+    </data>
+</odoo>

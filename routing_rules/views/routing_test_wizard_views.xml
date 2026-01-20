@@ -1,0 +1,66 @@
+<odoo>
+    <record id="view_routing_test_wizard_form" model="ir.ui.view">
+        <field name="name">routing.test.wizard.form</field>
+        <field name="model">routing.test.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Test Rules">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>Test Rules Logic</h1>
+                        <h3>Testing for: <field name="account_id" readonly="1"/></h3>
+                    </div>
+
+                    <group>
+                        <group string="Inputs">
+                            <field name="jurisdiction_id" options="{'no_create': True, 'no_open': True}"/>
+                            <field name="entity_id" options="{'no_create': True, 'no_open': True}"/>
+                        </group>
+                        <group string=".">
+                            <field name="doc_type" placeholder="e.g. Invoice"/>
+                            <field name="case_type_id" options="{'no_create': True, 'no_open': True}"/>
+                        </group>
+                    </group>
+
+                    <button name="action_run_test" 
+                            string="Run Test" 
+                            type="object" 
+                            class="btn-primary mb-3"/>
+
+                    <notebook>
+                        <page string="Test Results">
+                            <field name="result_ids" readonly="1">
+                                <list decoration-success="matches == True" decoration-muted="matches == False">
+                                    <field name="rule_name"/>
+                                    <field name="matches"/>
+                                    <field name="recipient_to"/>
+                                    <field name="recipient_cc"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+
+                    <group string="Final Outcome" class="mt-3">
+                        <group>
+                            <field name="final_recipient_to"/>
+                            <field name="final_recipient_cc"/>
+                        </group>
+                        <group>
+                            <field name="final_method_of_delivery"/>
+                        </group>
+                    </group>
+
+                    <footer>
+                        <button string="Close" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_routing_test_wizard" model="ir.actions.act_window">
+        <field name="name">Test Rules</field>
+        <field name="res_model">routing.test.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

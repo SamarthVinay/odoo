@@ -1,0 +1,66 @@
+<odoo>
+    <record id="action_routing_account_dashboard" model="ir.actions.act_window">
+        <field name="name">SOP Dashboard</field>
+        <field name="res_model">routing.account</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No Accounts Found
+            </p>
+        </field>
+    </record>
+
+    <record id="view_routing_account_tree" model="ir.ui.view">
+        <field name="name">routing.account.tree</field>
+        <field name="model">routing.account</field>
+        <field name="arch" type="xml">
+            <list string="SOP Dashboard" create="0">
+                <field name="account_name"/>
+                <field name="account_number"/>
+                <field name="entities_count"/>
+                <field name="rules_active_count"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_routing_account_form" model="ir.ui.view">
+        <field name="name">routing.account.form</field>
+        <field name="model">routing.account</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="account_name"/></h1>
+                    </div>
+                    <div class="row mt-4 mb-4">
+                        <div class="col-2">
+                            <button name="%(routing_rules.action_routing_condition_filtered)d" 
+                                    type="action" 
+                                    class="btn btn-outline-primary w-100" 
+                                    icon="fa-filter">
+                                Conditions (<field name="rules_active_count"/>)
+                            </button>
+                        </div>
+
+                        <div class="col-2">
+                            <button name="action_view_rules" 
+                                    type="object" 
+                                    string="Rules" 
+                                    class="btn btn-outline-secondary w-100" 
+                                    icon="fa-book"/>
+                        </div>
+
+                        <div class="col-2">
+                            <button name="%(routing_rules.action_routing_test_wizard)d" 
+                                    type="action" 
+                                    string="Test Rules" 
+                                    class="btn btn-outline-secondary w-100" 
+                                    icon="fa-play"
+                                    context="{'default_account_id': id}"/>
+                        </div>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

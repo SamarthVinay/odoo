@@ -1,0 +1,22 @@
+<odoo>
+    <menuitem id="menu_routing_rules_root"
+              name="Routing Rules"
+              sequence="15"/>
+
+    <menuitem id="menu_routing_dashboard"
+              name="SOP Dashboard"
+              parent="menu_routing_rules_root"
+              action="action_routing_account_dashboard"
+              sequence="1"/>
+
+    <menuitem id="menu_routing_configuration"
+              name="Configuration"
+              parent="menu_routing_rules_root"
+              sequence="10"/>
+
+    <menuitem id="menu_routing_condition"
+              name="Conditions"
+              parent="menu_routing_configuration"
+              action="action_routing_condition_all" 
+              sequence="10"/>
+</odoo>
